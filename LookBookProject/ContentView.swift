@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct SuperTextField: View {
     
     var placeholder: Text
@@ -25,8 +26,8 @@ struct SuperTextField: View {
 
 struct SheetView: View {
     @Environment(\.dismiss) var dismiss
-    @State var text1: String = "TextField Text"
-    @State var text2: String = "TextField Text"
+    @State var text1: String = ""
+    @State var text2: String = ""
     
     var body: some View {
         ZStack{
@@ -35,7 +36,7 @@ struct SheetView: View {
                 Spacer()
                     .frame(height: 50)
                 SuperTextField(
-                    placeholder: Text("Placeholder Text").foregroundColor(.red),
+                    placeholder: Text("Name").foregroundColor(Color(UIColor(named: "DarkWhite")!)).font(.system(size: 16, weight: .semibold)),
                     text: $text1
                 ).padding(.vertical,22)
                     .padding(.horizontal)
@@ -47,7 +48,7 @@ struct SheetView: View {
                     .frame(height: 20)
                 
                 SuperTextField(
-                    placeholder: Text("Placeholder Text").foregroundColor(.red),
+                    placeholder: Text("URL").foregroundColor(Color(UIColor(named: "DarkWhite")!)).font(.system(size: 16, weight: .semibold)),
                     text: $text2
                 ).padding(.vertical,22)
                     .padding(.horizontal)
@@ -62,9 +63,10 @@ struct SheetView: View {
                     print("Button sheets pressed")
                     dismiss()
                 } label: {
-                    Text("Submit")
+                    Text("SUBMIT")
                 }.frame(width: 150)
                     .padding(.vertical, 10)
+                    .foregroundColor(Color(UIColor(named: "DarkWhite")!)).font(.system(size: 16, weight: .semibold))
                     .background(Color(UIColor(named: "DarkBlue")!))
                     .cornerRadius(20)
                     .overlay(RoundedRectangle(cornerRadius: 20).stroke(LinearGradient(gradient: Gradient( colors: [Color(red: 0.43, green: 0.87, blue: 0.83), Color(red: 0.31, green: 0.64, blue: 0.89)]), startPoint: .top, endPoint: .bottom), lineWidth: 2))
@@ -85,9 +87,7 @@ struct ContentView: View {
                     VStack {
                         VStack {
                             VStack {
-                                Spacer()
-                                    .frame(height: 50)
-                                Text("Start Learning Objective's Generator").foregroundColor(Color.white).font(.system(size: 32, weight: .semibold)).frame(maxWidth: .infinity, alignment: .leading)
+                                Text("Start Learning Objective's Generator").foregroundColor(Color.white).font(.system(size: 32, weight: .bold)).frame(maxWidth: .infinity, alignment: .leading)
                                 
                                 Spacer()
                                     .frame(height: 100)
@@ -110,10 +110,9 @@ struct ContentView: View {
                                 
                                 Spacer().frame(height: 100)
                                 
-                                Text("History").foregroundColor(Color.white).font(.system(size: 32, weight: .semibold)).frame(maxWidth: .infinity, alignment: .leading)
+                                Text("History").foregroundColor(Color.white).font(.system(size: 32, weight: .bold)).frame(maxWidth: .infinity, alignment: .leading)
                                 
                                 ScrollView {
-                                    
                                     
                                     ForEach(1..<10) {_ in
                                         NavigationLink(destination: Text("DetailsView"), isActive: $isLinkActiveHistory1) {
@@ -122,9 +121,9 @@ struct ContentView: View {
                                                 self.isLinkActiveHistory1 = true
                                             } label: {
                                                 HStack {
-                                                    Text("Length")
+                                                    Text("Simaster").foregroundColor(Color(UIColor(named: "DarkWhite")!)).font(.system(size: 16, weight: .semibold)).lineLimit(1).padding(.trailing, 20)
                                                     Spacer()
-                                                    Text("minutes")
+                                                    Text("17/02/2022").foregroundColor(Color(UIColor(named: "DarkWhite")!)).font(.system(size: 16, weight: .semibold))
                                                 }
                                                 .accessibilityElement(children: .combine)
                                             }
@@ -139,7 +138,7 @@ struct ContentView: View {
                                     }
                                 }
                             }
-                            //                        .padding(.vertical, 50)
+                            .padding(.vertical, 20)
                             .padding(.horizontal, 20)
                         }
                     }
