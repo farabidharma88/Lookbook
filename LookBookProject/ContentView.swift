@@ -106,7 +106,7 @@ struct ContentView: View {
                                 .foregroundColor(Color.white)
                                 .cornerRadius(20)
                                 .background(Color(UIColor(named: "DarkBlue")!))
-                                .overlay(Circle().stroke(LinearGradient(gradient: Gradient( colors: [Color(red: 0.43, green: 0.87, blue: 0.83), Color(red: 0.31, green: 0.64, blue: 0.89)]), startPoint: .top, endPoint: .bottom), lineWidth: 2).frame(width: 250, height: 250))
+                                .overlay(Circle().stroke(LinearGradient(gradient: Gradient( colors: [Color(red: 0.43, green: 0.87, blue: 0.83), Color(red: 0.31, green: 0.64, blue: 0.89)]), startPoint: .top, endPoint: .bottom), lineWidth: 3).frame(width: 250, height: 250).shadow(color: .white, radius: 2, x: 0, y: 0))
                                 
                                 Spacer().frame(height: 100)
                                 
@@ -115,7 +115,7 @@ struct ContentView: View {
                                 ScrollView {
                                     
                                     ForEach(1..<10) {_ in
-                                        NavigationLink(destination: Text("DetailsView"), isActive: $isLinkActiveHistory1) {
+                                        NavigationLink(destination: DetailsView(), isActive: $isLinkActiveHistory1) {
                                             Button {
                                                 print("Button 1 pressed")
                                                 self.isLinkActiveHistory1 = true
@@ -144,7 +144,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationTitle("Content View")
+            .navigationTitle("Home")
             .navigationBarHidden(true)
         }
     }

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		AB9CC46D288A60FB00354568 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9CC46C288A60FB00354568 /* DetailsView.swift */; };
+		ABA88E2F288DBDDA004871F9 /* Details2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA88E2E288DBDDA004871F9 /* Details2View.swift */; };
+		ABA88E31288FE364004871F9 /* LoadingScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA88E30288FE364004871F9 /* LoadingScreenView.swift */; };
+		ABA88E33289121C2004871F9 /* NLPProcessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA88E32289121C2004871F9 /* NLPProcessingView.swift */; };
 		ABDE00C1288DB22100F92D3E /* HalfASheet in Frameworks */ = {isa = PBXBuildFile; productRef = ABDE00C0288DB22100F92D3E /* HalfASheet */; };
 		ABEC82B6288A4D14004508EE /* LookBookProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC82B5288A4D14004508EE /* LookBookProjectApp.swift */; };
 		ABEC82B8288A4D14004508EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEC82B7288A4D14004508EE /* ContentView.swift */; };
@@ -17,6 +20,9 @@
 
 /* Begin PBXFileReference section */
 		AB9CC46C288A60FB00354568 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		ABA88E2E288DBDDA004871F9 /* Details2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details2View.swift; sourceTree = "<group>"; };
+		ABA88E30288FE364004871F9 /* LoadingScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenView.swift; sourceTree = "<group>"; };
+		ABA88E32289121C2004871F9 /* NLPProcessingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NLPProcessingView.swift; sourceTree = "<group>"; };
 		ABEC82B2288A4D14004508EE /* LookBookProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LookBookProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABEC82B5288A4D14004508EE /* LookBookProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookBookProjectApp.swift; sourceTree = "<group>"; };
 		ABEC82B7288A4D14004508EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,6 +64,9 @@
 				ABEC82B5288A4D14004508EE /* LookBookProjectApp.swift */,
 				ABEC82B7288A4D14004508EE /* ContentView.swift */,
 				AB9CC46C288A60FB00354568 /* DetailsView.swift */,
+				ABA88E2E288DBDDA004871F9 /* Details2View.swift */,
+				ABA88E32289121C2004871F9 /* NLPProcessingView.swift */,
+				ABA88E30288FE364004871F9 /* LoadingScreenView.swift */,
 				ABEC82B9288A4D15004508EE /* Assets.xcassets */,
 				ABEC82BB288A4D15004508EE /* Preview Content */,
 			);
@@ -148,8 +157,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABA88E2F288DBDDA004871F9 /* Details2View.swift in Sources */,
 				ABEC82B8288A4D14004508EE /* ContentView.swift in Sources */,
+				ABA88E33289121C2004871F9 /* NLPProcessingView.swift in Sources */,
 				ABEC82B6288A4D14004508EE /* LookBookProjectApp.swift in Sources */,
+				ABA88E31288FE364004871F9 /* LoadingScreenView.swift in Sources */,
 				AB9CC46D288A60FB00354568 /* DetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
