@@ -11,6 +11,7 @@ import SwiftUI
 struct LookBookProjectApp: App {
     var body: some Scene {
         WindowGroup {
+//            NLPProcessingView()
             ContentView()
         }
     }

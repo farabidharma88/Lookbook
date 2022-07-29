@@ -28,51 +28,59 @@ struct SheetView: View {
     @Environment(\.dismiss) var dismiss
     @State var text1: String = ""
     @State var text2: String = ""
+    @State var linkAct = false
     
     var body: some View {
-        ZStack{
-            Color(UIColor(named: "DarkBlue")!).ignoresSafeArea()
-            VStack(alignment: .center){
-                Spacer()
-                    .frame(height: 50)
-                SuperTextField(
-                    placeholder: Text("Name").foregroundColor(Color(UIColor(named: "DarkWhite")!)).font(.system(size: 16, weight: .semibold)),
-                    text: $text1
-                ).padding(.vertical,22)
-                    .padding(.horizontal)
-                    .background(Color(UIColor(named: "DarkBlue")!))
-                    .cornerRadius(20)
-                    .overlay(RoundedRectangle(cornerRadius: 20).stroke(LinearGradient(gradient: Gradient( colors: [Color(red: 0.43, green: 0.87, blue: 0.83), Color(red: 0.31, green: 0.64, blue: 0.89)]), startPoint: .top, endPoint: .bottom), lineWidth: 2))
-                
-                Spacer()
-                    .frame(height: 20)
-                
-                SuperTextField(
-                    placeholder: Text("URL").foregroundColor(Color(UIColor(named: "DarkWhite")!)).font(.system(size: 16, weight: .semibold)),
-                    text: $text2
-                ).padding(.vertical,22)
-                    .padding(.horizontal)
-                    .background(Color(UIColor(named: "DarkBlue")!))
-                    .cornerRadius(20)
-                    .overlay(RoundedRectangle(cornerRadius: 20).stroke(LinearGradient(gradient: Gradient( colors: [Color(red: 0.43, green: 0.87, blue: 0.83), Color(red: 0.31, green: 0.64, blue: 0.89)]), startPoint: .top, endPoint: .bottom), lineWidth: 2))
-                
-                Spacer()
-                    .frame(height: 20)
-                
-                Button {
-                    print("Button sheets pressed")
-                    dismiss()
-                } label: {
-                    Text("SUBMIT")
-                }.frame(width: 150)
-                    .padding(.vertical, 10)
-                    .foregroundColor(Color(UIColor(named: "DarkWhite")!)).font(.system(size: 16, weight: .semibold))
-                    .background(Color(UIColor(named: "DarkBlue")!))
-                    .cornerRadius(20)
-                    .overlay(RoundedRectangle(cornerRadius: 20).stroke(LinearGradient(gradient: Gradient( colors: [Color(red: 0.43, green: 0.87, blue: 0.83), Color(red: 0.31, green: 0.64, blue: 0.89)]), startPoint: .top, endPoint: .bottom), lineWidth: 2))
-                Spacer()
+        NavigationView{
+            ZStack{
+                Color(UIColor(named: "DarkBlue")!).ignoresSafeArea()
+                VStack(alignment: .center){
+                    Spacer()
+                        .frame(height: 50)
+                    SuperTextField(
+                        placeholder: Text("Name").foregroundColor(Color(UIColor(named: "DarkWhite")!)).font(.system(size: 16, weight: .semibold)),
+                        text: $text1
+                    ).padding(.vertical,22)
+                        .padding(.horizontal)
+                        .background(Color(UIColor(named: "DarkBlue")!))
+                        .cornerRadius(20)
+                        .overlay(RoundedRectangle(cornerRadius: 20).stroke(LinearGradient(gradient: Gradient( colors: [Color(red: 0.43, green: 0.87, blue: 0.83), Color(red: 0.31, green: 0.64, blue: 0.89)]), startPoint: .top, endPoint: .bottom), lineWidth: 2))
+                    
+                    Spacer()
+                        .frame(height: 20)
+                    
+                    SuperTextField(
+                        placeholder: Text("URL").foregroundColor(Color(UIColor(named: "DarkWhite")!)).font(.system(size: 16, weight: .semibold)),
+                        text: $text2
+                    ).padding(.vertical,22)
+                        .padding(.horizontal)
+                        .background(Color(UIColor(named: "DarkBlue")!))
+                        .cornerRadius(20)
+                        .overlay(RoundedRectangle(cornerRadius: 20).stroke(LinearGradient(gradient: Gradient( colors: [Color(red: 0.43, green: 0.87, blue: 0.83), Color(red: 0.31, green: 0.64, blue: 0.89)]), startPoint: .top, endPoint: .bottom), lineWidth: 2))
+                    
+                    Spacer()
+                        .frame(height: 20)
+                    
+                    NavigationLink(destination: NLPProcessingView(), isActive: $linkAct){
+                        Button {
+                            print("Button sheets pressed")
+                            self.linkAct = true
+                            dismiss()
+                            
+                        } label: {
+                            Text("SUBMIT")
+                        }.frame(width: 150)
+                            .padding(.vertical, 10)
+                            .foregroundColor(Color(UIColor(named: "DarkWhite")!)).font(.system(size: 16, weight: .semibold))
+                            .background(Color(UIColor(named: "DarkBlue")!))
+                            .cornerRadius(20)
+                            .overlay(RoundedRectangle(cornerRadius: 20).stroke(LinearGradient(gradient: Gradient( colors: [Color(red: 0.43, green: 0.87, blue: 0.83), Color(red: 0.31, green: 0.64, blue: 0.89)]), startPoint: .top, endPoint: .bottom), lineWidth: 2))
+                    }
+                    
+                    Spacer()
+                }
             }
-        }
+        }.navigationTitle("farabi")
     }
 }
 
